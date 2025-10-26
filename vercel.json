@@ -1,0 +1,38 @@
+{
+  "buildCommand": "npm run build",
+  "devCommand": "npm run dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "outputDirectory": ".next",
+  "env": {
+    "NEXT_PUBLIC_SUPABASE_URL": {
+      "description": "Supabase project URL",
+      "required": true
+    },
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": {
+      "description": "Supabase anonymous/public API key",
+      "required": true
+    },
+    "OPENAI_API_KEY": {
+      "description": "OpenAI API key for AI scoring",
+      "required": true
+    },
+    "GITHUB_TOKEN": {
+      "description": "GitHub personal access token",
+      "required": true
+    },
+    "NEXT_PUBLIC_CELO_NETWORK": {
+      "description": "Celo network (alfajores or celo)",
+      "value": "alfajores",
+      "required": true
+    },
+    "NEXT_PUBLIC_CONTRACT_ADDRESS": {
+      "description": "Deployed GrantDistribution contract address",
+      "required": true
+    },
+    "NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID": {
+      "description": "WalletConnect Cloud project ID",
+      "required": true
+    }
+  }
+}
