@@ -2,6 +2,14 @@
 
 A decentralized platform that combines artificial intelligence with blockchain technology to revolutionize how grants are distributed to impactful projects. Built on Celo blockchain for accessibility, transparency, and fairness.
 
+## 🔗 Quick Links
+
+**🌐 Live Demo:** [https://ai-grant-nine.vercel.app/](https://ai-grant-nine.vercel.app/)
+
+**🎥 Video Demo:** [https://youtu.be/pcZ6CAegM8I](https://youtu.be/pcZ6CAegM8I)
+
+**📜 Smart Contract:** [0x0243FD476b211BC4FB086f33876Af847868fdDd7](https://alfajores.celoscan.io/address/0x0243FD476b211BC4FB086f33876Af847868fdDd7) (Celo Alfajores)
+
 ![Hero](./public/Hero.png)
 
 ---
