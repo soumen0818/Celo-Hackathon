@@ -192,18 +192,20 @@ export default function ProjectsOverview() {
 
                 if (projectData) {
                     // Fetch assigned companies
-
+                    console.log(`📋 Fetching assigned companies for project #${i}...`);
                     const companiesResponse = await fetch(
                         `/api/contract/read?function=getProjectAssignedCompanies&args=${i}`
                     );
                     const companiesResult = await companiesResponse.json();
+                    console.log(`  Response:`, companiesResult);
 
                     const companyAddresses = companiesResult.data || [];
+                    console.log(`  Addresses:`, companyAddresses);
 
                     // Map addresses to names using our pre-fetched map
                     const assignedCompanies: CompanyInfo[] = [];
                     if (companyAddresses && Array.isArray(companyAddresses) && companyAddresses.length > 0) {
-
+                        console.log(`  ✅ Found ${companyAddresses.length} assigned companies`);
                         for (const companyAddr of companyAddresses) {
                             const companyName = companiesMap.get(companyAddr.toLowerCase());
                             if (companyName) {
@@ -218,11 +220,11 @@ export default function ProjectsOverview() {
                                     address: companyAddr,
                                     name: `Company ${companyAddr.slice(0, 6)}...${companyAddr.slice(-4)}`,
                                 });
-
+                                console.log(`  ⚠️ Unknown company: ${companyAddr}`);
                             }
                         }
                     } else {
-
+                        console.log(`  ❌ No assigned companies found for project #${i}`);
                     }
 
                     projectsData.push({

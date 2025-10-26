@@ -70,13 +70,12 @@ export default function VotingPanel() {
     });
 
     useEffect(() => {
-
-
-
-
-
-
-
+        console.log('🔍 VotingPanel Debug:');
+        console.log('  Connected Address:', address);
+        console.log('  Assigned Project IDs:', assignedProjectIds);
+        console.log('  Is Loading?:', isLoadingAssignments);
+        console.log('  Is Error?:', isAssignmentsError);
+        console.log('  Error:', assignmentsError);
         console.log('  Is Array?:', Array.isArray(assignedProjectIds));
     }, [address, assignedProjectIds, isLoadingAssignments, isAssignmentsError, assignmentsError]);
 
@@ -371,13 +370,33 @@ export default function VotingPanel() {
                 ) : projects.length === 0 ? (
                     <div className="text-center py-12">
                         <FileText className="w-16 h-16 mx-auto mb-4 opacity-50 text-gray-500" />
-                        <p className="text-gray-400 text-lg">No projects assigned to your company yet</p>
+                        <p className="text-gray-400 text-lg font-semibold">No projects assigned to your company yet</p>
                         <p className="text-gray-500 text-sm mt-2">
-                            Please wait for the admin to assign projects for review
+                            Please contact the admin to assign projects for your review
                         </p>
+                        
+                        <div className="mt-6 bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 max-w-2xl mx-auto">
+                            <p className="text-blue-300 font-semibold mb-3">📋 Your Company Wallet Address:</p>
+                            <div className="bg-gray-900/50 rounded p-3 mb-3">
+                                <p className="font-mono text-sm text-white break-all">{address}</p>
+                            </div>
+                            <button
+                                onClick={() => {
+                                    navigator.clipboard.writeText(address || '');
+                                    alert('Address copied to clipboard!');
+                                }}
+                                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-white text-sm font-medium transition-colors"
+                            >
+                                Copy Address
+                            </button>
+                            <p className="text-xs text-gray-400 mt-3">
+                                ⚠️ Share this address with the admin so they can assign projects to you
+                            </p>
+                        </div>
+
                         <div className="mt-4 text-xs text-gray-600 bg-gray-800/50 rounded p-3 max-w-md mx-auto">
-                            <p className="font-mono">Connected: {address}</p>
-                            <p className="font-mono">Assigned IDs: {assignedProjectIds ? JSON.stringify(assignedProjectIds, (key, value) => typeof value === 'bigint' ? value.toString() : value) : 'null'}</p>
+                            <p className="text-gray-500 mb-1">Debug Info:</p>
+                            <p className="font-mono">Assigned Project IDs: {assignedProjectIds ? JSON.stringify(assignedProjectIds, (key, value) => typeof value === 'bigint' ? value.toString() : value) : '[]'}</p>
                         </div>
                     </div>
                 ) : (

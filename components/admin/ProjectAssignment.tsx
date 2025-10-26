@@ -57,6 +57,12 @@ export default function ProjectAssignment() {
             return;
         }
 
+        console.log('🎯 Assigning Project:', {
+            projectId: selectedProjectId,
+            addresses: addresses,
+            addressCount: addresses.length
+        });
+
         try {
             writeContract({
                 address: contractAddress,
@@ -82,10 +88,16 @@ export default function ProjectAssignment() {
 
     useEffect(() => {
         if (isSuccess) {
+            console.log('✅ Assignment Transaction Successful!', {
+                transactionHash: hash,
+                projectId: selectedProjectId,
+                addresses: companyAddresses
+            });
+            alert(`Successfully assigned project #${selectedProjectId}!\nTransaction: ${hash}\n\nPlease refresh the page to see the updates.`);
             setSelectedProjectId(null);
             setCompanyAddresses('');
         }
-    }, [isSuccess]);
+    }, [isSuccess, hash, selectedProjectId, companyAddresses]);
 
     return (
         <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700">
@@ -126,6 +138,9 @@ export default function ProjectAssignment() {
                     />
                     <p className="text-xs text-gray-400 mt-1">
                         Enter multiple company wallet addresses separated by commas
+                    </p>
+                    <p className="text-xs text-yellow-400 mt-2">
+                        ⚠️ Make sure to use the EXACT wallet address that the company will use to login and vote!
                     </p>
                 </div>
 
