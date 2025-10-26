@@ -374,25 +374,6 @@ export default function VotingPanel() {
                         <p className="text-gray-500 text-sm mt-2">
                             Please contact the admin to assign projects for your review
                         </p>
-                        
-                        <div className="mt-6 bg-blue-500/10 border border-blue-500/30 rounded-lg p-4 max-w-2xl mx-auto">
-                            <p className="text-blue-300 font-semibold mb-3">📋 Your Company Wallet Address:</p>
-                            <div className="bg-gray-900/50 rounded p-3 mb-3">
-                                <p className="font-mono text-sm text-white break-all">{address}</p>
-                            </div>
-                            <button
-                                onClick={() => {
-                                    navigator.clipboard.writeText(address || '');
-                                    alert('Address copied to clipboard!');
-                                }}
-                                className="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-white text-sm font-medium transition-colors"
-                            >
-                                Copy Address
-                            </button>
-                            <p className="text-xs text-gray-400 mt-3">
-                                ⚠️ Share this address with the admin so they can assign projects to you
-                            </p>
-                        </div>
 
                         <div className="mt-4 text-xs text-gray-600 bg-gray-800/50 rounded p-3 max-w-md mx-auto">
                             <p className="text-gray-500 mb-1">Debug Info:</p>
