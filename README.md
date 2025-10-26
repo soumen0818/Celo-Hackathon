@@ -8,7 +8,7 @@ A decentralized platform that combines artificial intelligence with blockchain t
 
 **🎥 Video Demo:** [https://youtu.be/pcZ6CAegM8I](https://youtu.be/pcZ6CAegM8I)
 
-**📜 Smart Contract:** [0x0243FD476b211BC4FB086f33876Af847868fdDd7](https://alfajores.celoscan.io/address/0x0243FD476b211BC4FB086f33876Af847868fdDd7) (Celo Alfajores)
+**📜 Smart Contract:** [0x0243FD476b211BC4FB086f33876Af847868fdDd7](https://celo-alfajores.blockscout.com/address/0x0243FD476b211BC4FB086f33876Af847868fdDd7?tab=txs) (Celo Alfajores)
 
 ![Hero](./public/Hero.png)
 
